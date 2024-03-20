@@ -1,8 +1,9 @@
 version: '3.8'
+name: 'portfolio'
 services:
   database:
     image: mysql:8.3.0
-    container_name: mysql_database
+    container_name: mysql_portfolio
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: test
@@ -13,7 +14,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin:5.2.1-apache
-    container_name: phpmyadmin_database
+    container_name: phpmyadmin_portfolio
     restart: always
     environment:
       - PMA_ARBITRARY=1
