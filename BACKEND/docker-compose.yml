@@ -4,18 +4,16 @@ services:
   database:
     image: mysql:8.3.0
     container_name: mysql_portfolio
-    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: test
     ports:
       - 3306:3306
     volumes:
-      - mysql-db:/var/lib/mysql
+      - mysql-portfolio:/var/lib/mysql
 
   phpmyadmin:
     image: phpmyadmin:5.2.1-apache
     container_name: phpmyadmin_portfolio
-    restart: always
     environment:
       - PMA_ARBITRARY=1
     ports:
@@ -24,5 +22,5 @@ services:
       - database
 
 volumes:
-  mysql-db:
+  mysql-portfolio:
     external: true
