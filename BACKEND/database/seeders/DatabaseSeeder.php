@@ -17,5 +17,9 @@ class DatabaseSeeder extends Seeder
         $this->call(TagsSeeder::class);
         SeederModel::create(['name' => TagsSeeder::class]);
       }
+      if (!SeederModel::where('name', TechnologySeeder::class)->exists()){
+        $this->call(TechnologySeeder::class);
+        SeederModel::create(['name' => TechnologySeeder::class]);
+      }
     }
 }

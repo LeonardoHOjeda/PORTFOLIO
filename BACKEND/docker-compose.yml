@@ -9,7 +9,7 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - mysql-portfolio:/var/lib/mysql
+      - ./docker/data/mysql:/var/lib/mysql
 
   phpmyadmin:
     image: phpmyadmin:5.2.1-apache
@@ -20,7 +20,3 @@ services:
       - 8080:80
     depends_on:
       - database
-
-volumes:
-  mysql-portfolio:
-    external: true
